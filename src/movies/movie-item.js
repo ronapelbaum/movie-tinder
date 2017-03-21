@@ -4,28 +4,12 @@ class MovieItem extends Component {
     constructor(props) {
         super(props);
         this.movie = props.movie;
-        this.vote = props.vote;
 
         console.log('ron movie-item.constructor()', this.movie);//TODO remove this
 
-        this.like = this.like.bind(this);
-        this.dislike = this.dislike.bind(this);
-        this.saveForLater = this.saveForLater.bind(this);
-    }
-
-    like() {
-        console.log('ron movie-item.like()', this.movie.title);//TODO remove this
-        this.vote(this.movie, 'like');
-    }
-
-    dislike() {
-        console.log('ron movie-item.dislike()', this.movie.title);//TODO remove this
-        this.vote(this.movie, 'dislike');
-    }
-
-    saveForLater() {
-        console.log('ron movie-item.saveForLater()', this.movie.title);//TODO remove this
-        this.vote(this.movie, 'saveForLater');
+        this.like = props.vote.bind(this, this.movie, 'like');
+        this.dislike = props.vote.bind(this, this.movie, 'dislike');
+        this.saveForLater = props.vote.bind(this, this.movie, 'saveForLater');
     }
 
     render() {
