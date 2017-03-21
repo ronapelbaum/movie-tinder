@@ -1,19 +1,17 @@
 import React, {Component} from 'react';
 import MovieItem from './movie-item';
+import MoviesData from './movies-data';
 
-const topMovies = [
-    {title: 'Ironman', year: 2008, genre: ['action', 'sci-fi']},
-    {title: 'Titanic', year: 1997, genre: ['drama']}
-];
 
 class MoviesList extends Component {
     constructor() {
         super();
-        this.list = topMovies;
+        this.md = new MoviesData();
+        this.list = this.md.getMoreMovies();
     }
 
     render() {
-        const movies = this.list.map((movie) => <MovieItem movie={movie}></MovieItem>);
+        const movies = this.list.map((movie) => <MovieItem movie={movie} vote={this.md.vote}></MovieItem>);
         return (
             <div>{movies}</div>
         );

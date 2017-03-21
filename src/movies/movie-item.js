@@ -4,6 +4,7 @@ class MovieItem extends Component {
     constructor(props) {
         super(props);
         this.movie = props.movie;
+        this.vote = props.vote;
 
         console.log('ron movie-item.constructor()', this.movie);//TODO remove this
 
@@ -14,14 +15,17 @@ class MovieItem extends Component {
 
     like() {
         console.log('ron movie-item.like()', this.movie.title);//TODO remove this
+        this.vote(this.movie, 'like');
     }
 
     dislike() {
         console.log('ron movie-item.dislike()', this.movie.title);//TODO remove this
+        this.vote(this.movie, 'dislike');
     }
 
     saveForLater() {
         console.log('ron movie-item.saveForLater()', this.movie.title);//TODO remove this
+        this.vote(this.movie, 'saveForLater');
     }
 
     render() {
