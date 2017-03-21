@@ -8,3 +8,9 @@ cache:
 script:
   - npm test
   - npm run build
+notifications:
+  email:
+    recipients:
+      - ronapelbaum@gmail.com
+    on_success: never # default: change
+    on_failure: always # default: always
