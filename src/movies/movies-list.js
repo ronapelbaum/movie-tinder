@@ -11,7 +11,8 @@ class MoviesList extends Component {
     }
 
     render() {
-        const movies = this.list.map((movie) => <MovieItem movie={movie} vote={this.md.vote.bind(this.md)}></MovieItem>);
+        const vote = this.md.vote.bind(this.md);
+        const movies = this.list.map((movie) => <MovieItem movie={movie} vote={vote} key={movie.id}></MovieItem>);
         return (
             <div>{movies}</div>
         );

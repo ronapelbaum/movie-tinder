@@ -2,8 +2,8 @@ import UserData from '../user/user-data';
 import DataService from '../data/data-service';
 
 const topMovies = [
-    {title: 'Ironman', year: 2008, genre: ['action', 'sci-fi']},
-    {title: 'Titanic', year: 1997, genre: ['drama']}
+    {id: 0, title: 'Ironman', year: 2008, genre: ['action', 'sci-fi']},
+    {id: 1, title: 'Titanic', year: 1997, genre: ['drama']}
 ];
 
 class MoviesData {
