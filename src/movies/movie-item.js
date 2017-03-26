@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {FaIcon} from '../utils/ui';
+import './movie-item.css';
 
 class MovieItem extends Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class MovieItem extends Component {
         return (
             <div>
                 <h3>{this.movie.title} ({this.movie.year})</h3>
-                <span>{this.movie.genre.join(',')}</span>
+                <img className="movie-item-image" src={this.movie.poster} alt={this.movie.title}/>
+                <div>{this.movie.genre.join(',')}</div>
                 <div>
                     <button onClick={this.dislike}><FaIcon icon="thumbs-o-down"/></button>
                     <button onClick={this.saveForLater}><FaIcon icon="thumb-tack"/></button>
