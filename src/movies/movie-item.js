@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Icon} from '../utils/ui';
+import {ButtonGroup} from '../utils/ui';
 import './movie-item.css';
 
 class MovieItem extends Component {
@@ -9,9 +9,11 @@ class MovieItem extends Component {
 
         console.log('ron movie-item.constructor()', this.movie);//TODO remove this
 
-        this.like = props.vote.bind(this, this.movie, 'like');
-        this.dislike = props.vote.bind(this, this.movie, 'dislike');
-        this.saveForLater = props.vote.bind(this, this.movie, 'saveForLater');
+        this.buttons = [
+            {onClick: props.vote.bind(this, this.movie, 'dislike'), icon: 'thumbs-o-down'},
+            {onClick: props.vote.bind(this, this.movie, 'saveForLater'), icon: 'thumb-tack'},
+            {onClick: props.vote.bind(this, this.movie, 'like'), icon: 'thumbs-o-up'}
+        ];
     }
 
     render() {
@@ -20,11 +22,7 @@ class MovieItem extends Component {
                 <h3>{this.movie.title} ({this.movie.year})</h3>
                 <img className="movie-item-image" src={this.movie.poster} alt={this.movie.title}/>
                 <div>{this.movie.genre.join(',')}</div>
-                <div>
-                    <button onClick={this.dislike}><Icon icon="thumbs-o-down"/></button>
-                    <button onClick={this.saveForLater}><Icon icon="thumb-tack"/></button>
-                    <button onClick={this.like}><Icon icon="thumbs-o-up"/></button>
-                </div>
+                <ButtonGroup buttons={this.buttons}/>
             </div>
         );
     }
