@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
 import MoviesList from './movies/movies-list';
-
+import {Navbar} from './utils/ui';
 class App extends Component {
   title = 'Movie Tinder';
 
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <h2>{this.title}</h2>
-        </div>
-          <MoviesList></MoviesList>
+      <div className="text-center">
+          <Navbar title={this.title}/>
+          <MoviesList/>
       </div>
     );
   }
