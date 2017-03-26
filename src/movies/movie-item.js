@@ -21,7 +21,7 @@ class MovieItem extends Component {
             <div>
                 <h3>{this.movie.title} ({this.movie.year})</h3>
                 <img className="movie-item-image" src={this.movie.poster} alt={this.movie.title}/>
-                <div>{this.movie.genre.join(',')}</div>
+                <div>{this.movie.genres}</div>
                 <ButtonGroup buttons={this.buttons}/>
             </div>
         );
