@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import MovieItem from './movie-item';
 import MoviesData from './movies-data';
-
+import {MySlider} from '../utils/ui';
 
 class MoviesList extends Component {
     constructor() {
@@ -12,7 +12,7 @@ class MoviesList extends Component {
 
     render() {
         const vote = this.md.vote.bind(this.md);
-        const movies = this.list.map((movie) => <MovieItem movie={movie} vote={vote} key={movie.id}></MovieItem>);
+        const movies = this.list.map((movie, index) => <MovieItem movie={movie} vote={vote} key={index}></MovieItem>);
         return (
             <div>{movies}</div>
         );
