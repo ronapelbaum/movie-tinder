@@ -7,8 +7,6 @@ class MovieItem extends Component {
         super(props);
         this.movie = props.movie;
 
-        console.log('ron movie-item.constructor()', this.movie);//TODO remove this
-
         this.buttons = [
             {onClick: props.vote.bind(this, this.movie, 'dislike'), icon: 'thumbs-o-down'},
             {onClick: props.vote.bind(this, this.movie, 'saveForLater'), icon: 'thumb-tack'},
