@@ -12,9 +12,9 @@ class MoviesList extends Component {
 
     render() {
         const vote = this.md.vote.bind(this.md);
-        const movies = this.list.map((movie, index) => <MovieItem movie={movie} vote={vote} key={index}></MovieItem>);
+        const movies = this.list.map((movie, index) => <div key={index} className="text-center"><MovieItem movie={movie} vote={vote} ></MovieItem></div>);
         return (
-            <div>{movies}</div>
+            <MySlider>{movies}</MySlider>
         );
     }
 }
