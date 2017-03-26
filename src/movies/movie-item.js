@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {FaIcon} from '../utils/ui';
+import {Icon} from '../utils/ui';
 import './movie-item.css';
 
 class MovieItem extends Component {
@@ -21,9 +21,9 @@ class MovieItem extends Component {
                 <img className="movie-item-image" src={this.movie.poster} alt={this.movie.title}/>
                 <div>{this.movie.genre.join(',')}</div>
                 <div>
-                    <button onClick={this.dislike}><FaIcon icon="thumbs-o-down"/></button>
-                    <button onClick={this.saveForLater}><FaIcon icon="thumb-tack"/></button>
-                    <button onClick={this.like}><FaIcon icon="thumbs-o-up"/></button>
+                    <button onClick={this.dislike}><Icon icon="thumbs-o-down"/></button>
+                    <button onClick={this.saveForLater}><Icon icon="thumb-tack"/></button>
+                    <button onClick={this.like}><Icon icon="thumbs-o-up"/></button>
                 </div>
             </div>
         );
