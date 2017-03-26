@@ -17,6 +17,7 @@
     "eject": "react-scripts eject",
     "docs:copy": "cp -R build/* docs/",
     "docs:clean": "rm -rf docs/*",
-    "docs": "npm run docs:clean && npm run docs:copy"
+    "docs": "npm run docs:clean && npm run docs:copy",
+    "postbuild": "npm run docs"
   }
 }
