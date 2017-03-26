@@ -8,7 +8,9 @@ class App extends Component {
     return (
       <div className="text-center">
           <Navbar title={this.title}/>
-          <MoviesList/>
+          <div className="container">
+              <MoviesList/>
+          </div>
       </div>
     );
   }
