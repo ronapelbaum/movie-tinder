@@ -4,8 +4,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "express": "^4.15.2",
+    "imdb-api": "^2.2.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-slick": "^0.14.7",
+    "slick-carousel": "^1.6.0"
   },
   "devDependencies": {
     "react-scripts": "0.9.5"
@@ -17,6 +21,7 @@
     "eject": "react-scripts eject",
     "docs:copy": "cp -R build/* docs/",
     "docs:clean": "rm -rf docs/*",
+    "docs:align": "sed -i 's//static/static/g' docs/index.html",
     "docs": "npm run docs:clean && npm run docs:copy",
     "postbuild": "npm run docs"
   }
